@@ -3,20 +3,11 @@
   "BUILD_VAR":"CIRCLE_SHA1",
   "sauceJobName":"xobject-observe",
   "browsers"  : [
-
-
-
-
-
   {
     "name"    : "chrome",
-    "platform":"Linux",
-    "version": "33.0"
-  },
-
-
-
-  {
+    "platform":"OS X 10.11",
+    "version": "44.0"
+  },{
     "name"    : "chrome",
     "platform":"OS X 10.11",
     "version": "33.0"
@@ -25,9 +16,19 @@
     "platform":"OS X 10.11",
     "version": "33.0"
   },{
+    "name"    : "safari",
+    "platform":"OS X 10.11",
+    "version": "9.0"
+  },
+
+  {
     "name"    : "chrome",
     "platform":"Linux",
     "version": "33.0"
+  },{
+    "name"    : "chrome",
+    "platform":"Linux",
+    "version": "43.0"
   },
   {
     "name"    : "firefox",
@@ -45,17 +46,27 @@
     "name"    : "chrome",
     "platform":"Windows 10",
     "version": "52"
-  },{
-    "name"    : "chrome",
-    "platform":"Linux",
-    "version": "43.0"
-  },{
+  },
+
+  {
+  "name"    : "internet explorer",
+  "platform":"Windows 7",
+  "version": "10.0"
+  },
+  {
+  "name"    : "internet explorer",
+  "platform":"Windows 8",
+  "version": "10.0"
+  },
+  {
+  "name"    : "internet explorer",
+  "platform":"Windows 7",
+  "version": "11.0"
+  },
+  {
     "name"    : "safari",
-    "platform":"OS X 10.11",
-    "version": "9.0"
-  },{
-    "name"    : "chrome",
-    "platform":"OS X 10.11",
-    "version": "44.0"
-  }]
+    "platform":"Windows 7",
+    "version": "5.1"
+  }
+  ]
 }
