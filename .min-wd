@@ -2,7 +2,34 @@
   "sauceLabs": true,
   "BUILD_VAR":"CIRCLE_SHA1",
   "sauceJobName":"xobject-observe",
-  "browsers"  : [{
+  "browsers"  : [
+
+
+
+
+
+  {
+    "name"    : "chrome",
+    "platform":"Linux",
+    "version": "33.0"
+  },
+
+
+
+  {
+    "name"    : "chrome",
+    "platform":"OS X 10.11",
+    "version": "33.0"
+  },{
+    "name"    : "firefox",
+    "platform":"OS X 10.11",
+    "version": "33.0"
+  },{
+    "name"    : "chrome",
+    "platform":"Linux",
+    "version": "33.0"
+  },
+  {
     "name"    : "firefox",
     "platform":"Windows 7",
     "version": "39.0"

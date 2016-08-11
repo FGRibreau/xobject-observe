@@ -33,3 +33,9 @@ obj.b = {c:1}; // log: "b (undefined -> {c:1})" (removing)
 ```
 
 # [Changelog](/CHANGELOG.md)
+
+# Todo:
+
+- [ ] IE9 support
+- [ ] IE8 support
+- [ ] (bonus) Opera support

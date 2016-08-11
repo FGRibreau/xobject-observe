@@ -1,12 +1,11 @@
 const webpack = require('webpack');
 module.exports = {
   entry: {
-    'observe.browser':'./observe.js'
   },
   output: {
     filename: 'dist/[name].js',
-    library:'xObjectObserve',
-    libraryTarget:'var'
+    library: 'xObjectObserve',
+    libraryTarget: 'var'
   },
   plugins: [
     new webpack.optimize.UglifyJsPlugin({
