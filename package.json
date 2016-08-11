@@ -1,0 +1,46 @@
+{
+  "name": "xobject-observe",
+  "version": "1.0.2",
+  "description": "A cross-browser object property observer uses ES6 proxy underneath and with fallback on dirty-checking",
+  "keywords": [
+    "object.observe",
+    "object",
+    "observe",
+    "proxy",
+    "cross-browser"
+  ],
+  "main": "observe.js",
+  "browser": {
+    "xObjectObserve": "observe.browser.js",
+    "observe": "observe.browser.js"
+  },
+  "scripts": {
+    "test": "mocha *.test.js",
+    "test-browser": "mochify --wd --transform [ babelify --presets [ es2015 ] ] observe.test.js",
+
+    "webpack": "webpack --progress --colors ./observe.js observe.browser.js --output-library='xObjectObserve' --output-library-target='var' --optimize-minimize",
+
+    "changelog-init": "conventional-changelog -i CHANGELOG.md -s -r 0",
+    "changelog": "conventional-changelog -i CHANGELOG.md -s",
+    "changelog-git": "npm run changelog && git add CHANGELOG.md && git commit -m 'docs(changelog): updated' && git push origin master"
+  },
+  "author": "Francois-Guillaume Ribreau <npm@fgribreau.com> (http://fgribreau.com/)",
+  "license": "MIT",
+  "engines": {
+    "node": "6.3"
+  },
+  "devDependencies": {
+    "babel-core": "^6.13.2",
+    "babel-loader": "^6.2.4",
+    "babel-polyfill": "^6.13.0",
+    "babel-preset-es2015": "^6.13.2",
+    "babelify": "^7.3.0",
+    "chai": "^3.5.0",
+    "conventional-changelog": "^1.1.0",
+    "conventional-changelog-cli": "^1.2.0",
+    "mocha": "^3.0.1",
+    "mochify": "^2.18.1",
+    "webpack": "^1.13.1"
+  },
+  "dependencies": {}
+}

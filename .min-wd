@@ -1,0 +1,27 @@
+{
+  "sauceLabs": true,
+  "BUILD_VAR":"CIRCLE_SHA1",
+  "sauceJobName":"xobject-observe",
+  "browsers"  : [{
+    "name"    : "chrome",
+    "version": "52"
+  }, {
+    "name"    : "internet explorer",
+    "version" : "8"
+  }, {
+    "name"    : "internet explorer",
+    "version" : "9"
+  }, {
+    "name"    : "internet explorer",
+    "version" : "10"
+  }, {
+    "name"    : "internet explorer",
+    "version" : "11"
+  }, {
+    "name"    : "firefox"
+  }, {
+    "name"    : "opera"
+  }, {
+    "name"    : "safari"
+  }]
+}
