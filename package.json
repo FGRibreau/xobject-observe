@@ -11,13 +11,15 @@
   ],
   "main": "observe.js",
   "browser": {
-    "xObjectObserve": "observe.browser.js",
-    "observe": "observe.browser.js"
+    "xObjectObserve": "dist/observe.browser.js",
+    "observe": "dist/observe.browser.js"
   },
   "scripts": {
     "test": "mocha *.test.js",
-    "test-browser": "mochify --wd --transform [ babelify --presets [ es2015 ] ] observe.test.js",
-    "dist": "webpack --progress --colors ./observe.js observe.browser.js --output-library='xObjectObserve' --output-library-target='var' --optimize-minimize",
+    "saucelabs-plateform-configurator":"open https://wiki.saucelabs.com/display/DOCS/Platform+Configurator",
+    "test-browser": "mochify --wd --transform [ babelify ] observe.test.js",
+    "dist": "webpack --progress --colors",
+    "prepublish":"npm run dist",
     "changelog-init": "conventional-changelog -i CHANGELOG.md -s -r 0",
     "changelog": "conventional-changelog -i CHANGELOG.md -s",
     "changelog-git": "npm run changelog && git add CHANGELOG.md && git commit -m 'docs(changelog): updated' && git push origin master"
@@ -28,8 +30,12 @@
     "node": "6.3"
   },
   "devDependencies": {
+    "babel-cli": "^6.11.4",
     "babel-core": "^6.13.2",
     "babel-loader": "^6.2.4",
+    "babel-plugin-check-es2015-constants": "^6.8.0",
+    "babel-plugin-transform-es2015-arrow-functions": "^6.8.0",
+    "babel-plugin-transform-es2015-block-scoping": "^6.10.1",
     "babel-polyfill": "^6.13.0",
     "babel-preset-es2015": "^6.13.2",
     "babelify": "^7.3.0",

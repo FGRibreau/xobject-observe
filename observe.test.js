@@ -1,5 +1,4 @@
 'use strict';
-
 const assert = require('assert');
 const observe = require('./observe');
 

@@ -16,7 +16,7 @@ npm i xobject-observe -S
 
 # Browser (for non compatible npm environment)
 
-Include `observe.browser.js` into your page and use `xObjectObserve()` function.
+Include `dist/observe.browser.js` into your page and use `xObjectObserve()` function.
 
 # Usage
 

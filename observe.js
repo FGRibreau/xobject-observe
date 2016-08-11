@@ -1,5 +1,4 @@
 'use strict';
-// require('babel-polyfill');
 // https://gist.github.com/eligrey/384583
 
 // global configuration

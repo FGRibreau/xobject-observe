@@ -1,10 +1,10 @@
 const webpack = require('webpack');
 module.exports = {
   entry: {
-    'observe.browser':'./observe.js',
+    'observe.browser':'./observe.js'
   },
   output: {
-    filename: '[name].js',
+    filename: 'dist/[name].js',
     library:'xObjectObserve',
     libraryTarget:'var'
   },

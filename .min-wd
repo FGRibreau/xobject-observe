@@ -3,25 +3,32 @@
   "BUILD_VAR":"CIRCLE_SHA1",
   "sauceJobName":"xobject-observe",
   "browsers"  : [{
+    "name"    : "firefox",
+    "platform":"Windows 7",
+    "version": "39.0"
+  },{
     "name"    : "chrome",
+    "platform":"Windows 7",
+    "version": "47"
+  },{
+    "name"    : "chrome",
+    "platform":"Windows 8",
+    "version": "43.0"
+  },{
+    "name"    : "chrome",
+    "platform":"Windows 10",
     "version": "52"
-  }, {
-    "name"    : "internet explorer",
-    "version" : "8"
-  }, {
-    "name"    : "internet explorer",
-    "version" : "9"
-  }, {
-    "name"    : "internet explorer",
-    "version" : "10"
-  }, {
-    "name"    : "internet explorer",
-    "version" : "11"
-  }, {
-    "name"    : "firefox"
-  }, {
-    "name"    : "opera"
-  }, {
-    "name"    : "safari"
+  },{
+    "name"    : "chrome",
+    "platform":"Linux",
+    "version": "43.0"
+  },{
+    "name"    : "safari",
+    "platform":"OS X 10.11",
+    "version": "9.0"
+  },{
+    "name"    : "chrome",
+    "platform":"OS X 10.11",
+    "version": "44.0"
   }]
 }
