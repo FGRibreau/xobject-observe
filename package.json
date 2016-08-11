@@ -18,7 +18,7 @@
     "test": "mocha *.test.js",
     "test-browser": "mochify --wd --transform [ babelify --presets [ es2015 ] ] observe.test.js",
 
-    "webpack": "webpack --progress --colors ./observe.js observe.browser.js --output-library='xObjectObserve' --output-library-target='var' --optimize-minimize",
+    "dist": "webpack --progress --colors ./observe.js observe.browser.js --output-library='xObjectObserve' --output-library-target='var' --optimize-minimize",
 
     "changelog-init": "conventional-changelog -i CHANGELOG.md -s -r 0",
     "changelog": "conventional-changelog -i CHANGELOG.md -s",
