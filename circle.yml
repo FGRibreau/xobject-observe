@@ -10,4 +10,4 @@ test:
     - npm run dist-test
     - npm run test
     - npm run test-browser
-    - npm run test-coverage
+    - npm run test-coverage-coveralls
