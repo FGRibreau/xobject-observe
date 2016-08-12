@@ -47,7 +47,9 @@ describe('xobject-observe', () => {
             backend.testEnd(f);
           });
 
-          obj.a = 1; // log: "a (undefined -> 1)"
+          setTimeout(() => { // make it async
+            obj.a = 1; // log: "a (undefined -> 1)"
+          }, 100);
         });
 
         it('should emit en event when a property is changed', (f) => {
@@ -60,7 +62,9 @@ describe('xobject-observe', () => {
             backend.testEnd(f);
           });
 
-          obj.a = 2;
+          setTimeout(() => { // make it async
+            obj.a = 2; // log: "a (1 -> 2)"
+          }, 100);
         });
 
         it('should emit en event when a property is removed', (f) => {
@@ -73,7 +77,10 @@ describe('xobject-observe', () => {
             backend.testEnd(f);
           });
 
-          delete obj.a;
+          setTimeout(() => { // make it async
+            delete obj.a; // log: "a (2 -> undefined)"
+          }, 100);
+
         });
       });
     });

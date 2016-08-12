@@ -71,7 +71,7 @@ module.exports = (config) => {
       function tick(delay, oldObj, newObj, listener) {
         checkChanges(oldObj, newObj, listener);
         // @todo make it configurable
-        _nextTick = setTimeout(checkChanges, delay, shallowClone(newObj), newObj, listener);
+        _nextTick = setTimeout(tick, delay, delay, shallowClone(newObj), newObj, listener);
       }
 
       tick(config.DIRTYCHECK_DELAY, shallowClone(object), object, listener);

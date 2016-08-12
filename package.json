@@ -16,9 +16,9 @@
   },
   "scripts": {
     "test": "mocha *.test.js",
+    "test-watch": "mocha -w *.test.js",
     "saucelabs-plateform-configurator": "open https://wiki.saucelabs.com/display/DOCS/Platform+Configurator",
     "test-browser": "mochify --reporter=spec --timeout=10000 --wd --transform [ babelify ] observe.test.js",
-    "test-browser2": "mochify --reporter=spec --timeout=10000 --wd --transform [ babelify ] ./dist/observe.test.browser.js",
     "dist": "webpack  --progress --colors ./observe.js --output-filename=dist/observe.browser.js --target web",
     "dist-test": "webpack  --progress --colors ./observe.test.js --output-filename=dist/observe.test.browser.js --target web",
     "prepublish": "npm run dist",
