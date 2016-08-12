@@ -8,15 +8,22 @@
 > A cross-browser object property observer uses ES6 proxy underneath and with fallback on dirty-checking.
 
 
-# NPM
+### NPM
 
 ```
 npm i xobject-observe -S
 ```
 
-# Browser (for non compatible npm environment)
+### Browser (for non compatible npm environment)
 
 Include `dist/observe.browser.js` into your page and use `xObjectObserve()` function.
+
+# Features
+
+* Uses ES6 proxy and fallback on dirty-checking for older browser.
+* Extensible and configurable detection backends
+* Complete life-cycle management (`observe()` and `observe.stop()`)
+* Cross-browser support (IE 10+, Chrome 33+, Firefox 33+, Safari 5+)
 
 # Usage
 
@@ -30,7 +37,14 @@ const obj = observe({}, console.log.bind(console, '%s (%s -> %s)'))
 obj.a = 1; // log: "a (undefined -> 1)" (adding)
 obj.a = 2;// log: "a (1 -> 2)" (changing)
 obj.b = {c:1}; // log: "b (undefined -> {c:1})" (removing)
+
+observe.stop(obj); // stop observing
 ```
+
+# Currently supported detection backends
+
+- *[es6proxy](/methods/es6proxy.js)*: (**fastest way in JS**) leverage ES6 Proxy to detect changes made on an object. No need to configure anything.
+- *[dirtyChecking](/methods/dirtyChecking.js)*: (**slow but works everywhere**) regulary check if properties of the observed object between the last check (shallow object clone) and now. The comparison is done through a strict equality thus changes on nested objects are not supported. The check interval (in ms) is configurable through `observe.config.DIRTYCHECK_DELAY = 1000`.
 
 # [Changelog](/CHANGELOG.md)
 
