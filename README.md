@@ -34,9 +34,7 @@ Include `dist/observe.browser.js` into your page and use `xObjectObserve()` func
 const observe = require('xobject-observe');
 
 // create an empty object and observe it
-const obj = observe({}, (property, oldValue, newValue, obj) => {
-  console.log.bind(console, '%s (%s -> %s)')
-})
+const obj = observe({}, console.log.bind(console, '%s (%s -> %s)'))
 
 obj.a = 1; // log: "a (undefined -> 1)" (adding)
 obj.a = 2;// log: "a (1 -> 2)" (changing)
@@ -56,4 +54,4 @@ observe.stop(obj); // stop observing
 
 - [ ] IE9 support
 - [ ] IE8 support
-- [ ] (bonus) Opera support
+- [ ] \(bonus\) Opera support
