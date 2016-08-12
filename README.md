@@ -20,11 +20,11 @@ Include `dist/observe.browser.js` into your page and use `xObjectObserve()` func
 
 # Features
 
-* Uses ES6 proxy and fallback on dirty-checking for older browser.
+* Uses ES6 proxy and fallback on dirty-checking for old browsers
 * Extensible and configurable detection backends
 * Complete life-cycle management (`observe()` and `observe.stop()`)
-* Automated **cross-browser** support through saucelabs (IE 10+, Chrome 33+, Firefox 33+, Safari 5+)
-* 100% **code coverage**
+* Automated **cross-browser** support through [SauceLabs](https://saucelabs.com/u/xobject-observe) (IE 10+, Chrome 33+, Firefox 33+, Safari 5+)
+* [100%](https://coveralls.io/github/FGRibreau/xobject-observe?branch=master) **code coverage**
 * [Available build](/dist) for non-commonjs environment
 
 # Usage
