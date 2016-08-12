@@ -16,9 +16,11 @@ describe('xobject-observe', () => {
   const backend = [{
     describe: 'with ES6 proxy observation',
     beforeEach: () => {
-      observe.config.METHODS = ['es6proxy', 'dirtyChecking'];
+      observe.config.METHODS = ['es6proxy'];
     },
-    afterEach: () => {},
+    afterEach: (obj) => {
+      observe.stop(obj);
+    },
     testEnd: (f) => f()
   }, {
     describe: 'with shallow dirty-checking observation',

@@ -1,6 +1,6 @@
 # xobject-observe
 
-[![Build Status](https://img.shields.io/circleci/project/FGRibreau/xobject-observe.svg)](https://circleci.com/gh/FGRibreau/xobject-observe/) [![Deps](	https://img.shields.io/david/FGRibreau/xobject-observe.svg)](https://david-dm.org/FGRibreau/xobject-observe) [![NPM version](https://img.shields.io/npm/v/xobject-observe.svg)](http://badge.fury.io/js/xobject-observe) [![Downloads](http://img.shields.io/npm/dm/xobject-observe.svg)](https://www.npmjs.com/package/xobject-observe) ![extra](https://img.shields.io/badge/actively%20maintained-yes-ff69b4.svg)
+[![Build Status](https://img.shields.io/circleci/project/FGRibreau/xobject-observe.svg)](https://circleci.com/gh/FGRibreau/xobject-observe/) [![Coverage Status](https://img.shields.io/coveralls/FGRibreau/xobject-observe/master.svg)](https://coveralls.io/github/FGRibreau/xobject-observe?branch=master) [![Deps](	https://img.shields.io/david/FGRibreau/xobject-observe.svg)](https://david-dm.org/FGRibreau/xobject-observe) [![NPM version](https://img.shields.io/npm/v/xobject-observe.svg)](http://badge.fury.io/js/xobject-observe) [![Downloads](http://img.shields.io/npm/dm/xobject-observe.svg)](https://www.npmjs.com/package/xobject-observe) ![extra](https://img.shields.io/badge/actively%20maintained-yes-ff69b4.svg)
 
 
 [![Selenium Browser Matrix](https://saucelabs.com/browser-matrix/xobject-observe.svg)](https://saucelabs.com/u/xobject-observe)
@@ -23,7 +23,8 @@ Include `dist/observe.browser.js` into your page and use `xObjectObserve()` func
 * Uses ES6 proxy and fallback on dirty-checking for older browser.
 * Extensible and configurable detection backends
 * Complete life-cycle management (`observe()` and `observe.stop()`)
-* Cross-browser support (IE 10+, Chrome 33+, Firefox 33+, Safari 5+)
+* Automated **cross-browser** support through saucelabs (IE 10+, Chrome 33+, Firefox 33+, Safari 5+)
+* 100% **code coverage**
 * [Available build](/dist) for non-commonjs environment
 
 # Usage

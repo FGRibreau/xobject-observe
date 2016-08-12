@@ -1,8 +1,12 @@
 machine:
   node:
     version: 6.3
+  environment:
+    COVERALLS_SERVICE_NAME: circleci
+
 test:
   override:
     - npm run dist
     - npm run test
     - npm run test-browser
+    - npm run test-coverage

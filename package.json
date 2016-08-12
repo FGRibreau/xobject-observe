@@ -19,6 +19,8 @@
     "test-watch": "mocha -w *.test.js",
     "saucelabs-plateform-configurator": "open https://wiki.saucelabs.com/display/DOCS/Platform+Configurator",
     "test-browser": "mochify --reporter=spec --timeout=10000 --wd --transform [ babelify ] observe.test.js",
+    "test-coverage": "nyc --all --statements=100 --lines=100 --functions=90 --branches=79 --check-coverage --reporter=lcov --reporter=cobertura --report-dir=coverage -- mocha -R spec -t 100000 observe.test.js",
+    "test-coverage-coveralls": "npm run test-coverage && cat ./coverage/lcov.info | coveralls",
     "dist": "webpack  --progress --colors ./observe.js --output-filename=dist/observe.browser.js --target web",
     "dist-test": "webpack  --progress --colors ./observe.test.js --output-filename=dist/observe.test.browser.js --target web",
     "prepublish": "npm run dist",
@@ -30,6 +32,13 @@
   "license": "MIT",
   "engines": {
     "node": "6.3"
+  },
+  "nyc": {
+    "exclude": [
+      "dist",
+      "coverage",
+      "webpack.config.js"
+    ]
   },
   "devDependencies": {
     "babel-cli": "^6.11.4",
@@ -44,8 +53,10 @@
     "chai": "^3.5.0",
     "conventional-changelog": "^1.1.0",
     "conventional-changelog-cli": "^1.2.0",
+    "coveralls": "^2.11.12",
     "mocha": "^3.0.1",
     "mochify": "^2.18.1",
+    "nyc": "^7.1.0",
     "webpack": "^1.13.1",
     "webpack-dev-server": "^1.14.1"
   },
