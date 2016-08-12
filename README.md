@@ -56,4 +56,4 @@ observe.stop(obj); // stop observing
 
 - [ ] IE9 support
 - [ ] IE8 support
-- [ ] (bonus) Opera support
+- [ ] \(bonus\) Opera support
