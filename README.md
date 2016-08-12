@@ -24,6 +24,7 @@ Include `dist/observe.browser.js` into your page and use `xObjectObserve()` func
 * Extensible and configurable detection backends
 * Complete life-cycle management (`observe()` and `observe.stop()`)
 * Cross-browser support (IE 10+, Chrome 33+, Firefox 33+, Safari 5+)
+* [Available build](/dist) for non-commonjs environment
 
 # Usage
 
