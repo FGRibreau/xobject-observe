@@ -1,27 +1,23 @@
 'use strict';
-module.exports = (config) => {
-
+module.exports = (config, watched) => {
   return {
     isCompatible: () => true, // dirty-checking is always available
     method: (object, listener) => {
       // fallback on dirty-checking
       let _nextTick;
 
-      object[config.OBSERVE_KEY] = () => {
+      watched[object] = () => {
         clearTimeout(_nextTick);
       };
 
       function has(obj, key) {
-        return obj.hasOwnProperty(key) && key !== config.OBSERVE_KEY;
+        return obj.hasOwnProperty(key);
 
       }
 
       function shallowClone(obj) {
         const clone = {};
         for (var key in obj) { // for old browser support
-          if (key === config.OBSERVE_KEY) {
-            continue;
-          }
           if (has(obj, key)) {
             clone[key] = obj[key];
           }
@@ -40,23 +36,19 @@ module.exports = (config) => {
         for (var key in oldObj) {
 
           if (!newObj.hasOwnProperty(key)) { // removed
-            listener(key, oldObj[key], undefined);
+            listener(key, oldObj[key], undefined, newObj);
             continue;
           }
 
           if (oldObj[key] !== newObj[key]) { // shallow comparison, may involve to deep object introspection in the future
-            listener(key, oldObj[key], newObj[key]);
+            listener(key, oldObj[key], newObj[key], newObj);
           }
         }
 
         // check for new addition
         for (var key in newObj) {
-          if (key === config.OBSERVE_KEY) {
-            continue;
-          }
-
           if (!oldObj.hasOwnProperty(key)) { // added
-            listener(key, undefined, newObj[key]);
+            listener(key, undefined, newObj[key], newObj);
           }
         }
       }

@@ -16,33 +16,29 @@ describe('xobject-observe', () => {
   const backend = [{
     describe: 'with ES6 proxy observation',
     beforeEach: () => {
-      observe.config.METHODS = ['es6proxy'];
+      observe.config.METHODS = ['es6proxy', 'dirtyChecking'];
     },
-    afterEach: (obj) => {
-      observe.stop(obj);
-    },
-    testEnd: (f) => f()
+    afterEach: (obj) => observe.stop(obj),
+    testEnd: (f) => setTimeout(f)
   }, {
     describe: 'with shallow dirty-checking observation',
     beforeEach: () => {
       observe.config.METHODS = ['dirtyChecking'];
       observe.config.DIRTYCHECK_DELAY = 100;
     },
-    afterEach: (obj) => {
-      observe.stop(obj);
-    },
+    afterEach: (obj) => observe.stop(obj),
     testEnd: (f) => setTimeout(f) // be sure the dirty checking does not call again a listener
   }].forEach(backend => {
 
     describe(backend.describe, () => {
       describe('with a single level object', () => {
-        let obj;
+        let obj = {};
 
         beforeEach(() => backend.beforeEach());
         afterEach(() => backend.afterEach(obj));
 
         it('should emit en event when a property is added', (f) => {
-          obj = observe({}, (prop, oldValue, newValue) => {
+          obj = observe({}, (prop, oldValue, newValue, obj) => {
             assert(prop === 'a', `prop === 'a'`);
             assert(oldValue === undefined, `oldValue === undefined`);
             assert(newValue === 1, `newValue === 1`);
@@ -57,7 +53,7 @@ describe('xobject-observe', () => {
         it('should emit en event when a property is changed', (f) => {
           obj = observe({
             a: 1
-          }, (prop, oldValue, newValue) => {
+          }, (prop, oldValue, newValue, obj) => {
             assert(prop === 'a', `prop === 'a'`);
             assert(oldValue === 1, `oldValue === 1`);
             assert(newValue === 2, `newValue === 2`);
@@ -72,7 +68,7 @@ describe('xobject-observe', () => {
         it('should emit en event when a property is removed', (f) => {
           obj = observe({
             a: 2
-          }, (prop, oldValue, newValue) => {
+          }, (prop, oldValue, newValue, obj) => {
             assert(prop === 'a', `prop === 'a'`);
             assert(oldValue === 2, `oldValue === 2`);
             assert(newValue === undefined, `newValue === undefined`);

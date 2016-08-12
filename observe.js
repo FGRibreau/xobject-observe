@@ -4,8 +4,7 @@
 // global configuration
 const config = {
   METHODS: ['es6proxy', 'dirtyChecking'],
-  DIRTYCHECK_DELAY: 1000,
-  OBSERVE_KEY: '__OBSERVED__'
+  DIRTYCHECK_DELAY: 1000
 };
 
 function find(arr, predicate) { // cross-browser helper
@@ -28,16 +27,21 @@ function observe(object, listener) {
   return observe.methods[compatibleMethodName].method(object, listener);
 }
 
+const watched = {};
+
 observe.methods = {
-  es6proxy: require('./methods/es6proxy')(config),
-  dirtyChecking: require('./methods/dirtyChecking')(config)
+  es6proxy: require('./methods/es6proxy')(config, watched),
+  dirtyChecking: require('./methods/dirtyChecking')(config, watched)
 };
 
 // expose global configuration
 observe.config = config;
 
 observe.stop = (obj) => {
-  obj[config.OBSERVE_KEY]();
+  if(typeof watched[obj] === 'function'){
+    watched[obj]();
+    delete watched[obj];
+  }
 }
 
 module.exports = observe;
