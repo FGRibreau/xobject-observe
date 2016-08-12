@@ -35,7 +35,7 @@ const observe = require('xobject-observe');
 
 // create an empty object and observe it
 const obj = observe({}, (property, oldValue, newValue, obj) => {
-  console.log.bind(console, '%s (%s -> %s)')
+  console.log('%s (%s -> %s)', property, oldValue, newValue);
 })
 
 obj.a = 1; // log: "a (undefined -> 1)" (adding)
