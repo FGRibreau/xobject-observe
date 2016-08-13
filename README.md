@@ -50,6 +50,11 @@ observe.stop(obj); // stop observing
 - *[es6proxy](/methods/es6proxy.js)*: (**fastest way in JS**) leverage ES6 Proxy to detect changes made on an object. No need to configure anything.
 - *[dirtyChecking](/methods/dirtyChecking.js)*: (**slow but works everywhere**) regulary check if properties of the observed object between the last check (shallow object clone) and now. The comparison is done through a strict equality thus changes on nested objects are not supported. The check interval (in ms) is configurable through `observe.config.DIRTYCHECK_DELAY = 1000`.
 
+
+## How does it difer from Object.observe?
+
+[Object.observe](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/observe) is obsolete. It was deprecated in Chrome 49 and was entirely removed in Chrome 52. xobject-observe offers a cross-browser alternative to it with a slightly easier API.
+
 # [Changelog](/CHANGELOG.md)
 
 # Todo:
