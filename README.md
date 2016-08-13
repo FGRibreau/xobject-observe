@@ -53,7 +53,7 @@ observe.stop(obj); // stop observing
 Other backends can easily be setted at runtime as new attributes in `observe.methods`.
 
 
-## How does it difer from Object.observe?
+## How does it differ from Object.observe?
 
 [Object.observe](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/observe) is obsolete. It was deprecated in Chrome 49 and was entirely removed in Chrome 52. xobject-observe offers a cross-browser alternative to it with a slightly easier API.
 
