@@ -1,6 +1,6 @@
 {
   "name": "xobject-observe",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A cross-browser object property observer uses ES6 proxy underneath and with fallback on dirty-checking",
   "keywords": [
     "object.observe",
@@ -15,15 +15,17 @@
     "observe": "dist/observe.browser.js"
   },
   "scripts": {
-    "test": "mocha *.test.js",
+    "test": "npm run test-coverage && npm run test-browser",
+    "test-unit": "mocha -w *.test.js",
     "test-watch": "mocha -w *.test.js",
-    "saucelabs-plateform-configurator": "open https://wiki.saucelabs.com/display/DOCS/Platform+Configurator",
-    "test-browser": "mochify --reporter=spec --timeout=10000 --wd --transform [ babelify ] observe.test.js",
     "test-coverage": "nyc --all --statements=100 --lines=100 --functions=90 --branches=70 --check-coverage --reporter=lcov --reporter=cobertura --report-dir=coverage -- mocha -R spec -t 100000 observe.test.js",
-    "test-coverage-coveralls": "npm run test-coverage && cat ./coverage/lcov.info | coveralls",
+    "test-browser": "mochify --reporter=spec --timeout=10000 --wd --transform [ babelify ] observe.test.js",
+    "send-coverage": "cat ./coverage/lcov.info | coveralls",
+    "saucelabs-plateform-configurator": "open https://wiki.saucelabs.com/display/DOCS/Platform+Configurator",
     "dist": "webpack  --progress --colors ./observe.js --output-filename=dist/observe.browser.js --target web",
     "dist-test": "webpack  --progress --colors ./observe.test.js --output-filename=dist/observe.test.browser.js --target web",
     "prepublish": "npm run dist",
+    "update": "updtr",
     "changelog-init": "conventional-changelog -i CHANGELOG.md -s -r 0",
     "changelog": "conventional-changelog -i CHANGELOG.md -s",
     "changelog-git": "npm run changelog && git add CHANGELOG.md && git commit -m 'docs(changelog): updated' && git push origin master"
@@ -35,6 +37,7 @@
   },
   "nyc": {
     "exclude": [
+      "node_modules",
       "dist",
       "coverage",
       "webpack.config.js"
@@ -58,6 +61,7 @@
     "mochify": "^2.18.1",
     "nyc": "^7.1.0",
     "webpack": "^1.13.1",
+    "updtr": "^0.2.1",
     "webpack-dev-server": "^1.14.1"
   },
   "dependencies": {}
