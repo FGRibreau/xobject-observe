@@ -24,6 +24,7 @@
     "dist": "webpack  --progress --colors ./observe.js --output-filename=dist/observe.browser.js --target web",
     "dist-test": "webpack  --progress --colors ./observe.test.js --output-filename=dist/observe.test.browser.js --target web",
     "prepublish": "npm run dist",
+    "update": "updtr",
     "changelog-init": "conventional-changelog -i CHANGELOG.md -s -r 0",
     "changelog": "conventional-changelog -i CHANGELOG.md -s",
     "changelog-git": "npm run changelog && git add CHANGELOG.md && git commit -m 'docs(changelog): updated' && git push origin master"
@@ -43,7 +44,7 @@
   "devDependencies": {
     "babel-cli": "^6.11.4",
     "babel-core": "^6.13.2",
-    "babel-loader": "^6.2.4",
+    "babel-loader": "^6.2.5",
     "babel-plugin-check-es2015-constants": "^6.8.0",
     "babel-plugin-transform-es2015-arrow-functions": "^6.8.0",
     "babel-plugin-transform-es2015-block-scoping": "^6.10.1",
@@ -54,10 +55,11 @@
     "conventional-changelog": "^1.1.0",
     "conventional-changelog-cli": "^1.2.0",
     "coveralls": "^2.11.12",
-    "mocha": "^3.0.1",
+    "mocha": "^3.0.2",
     "mochify": "^2.18.1",
-    "nyc": "^7.1.0",
-    "webpack": "^1.13.1",
+    "nyc": "^8.1.0",
+    "updtr": "^0.2.1",
+    "webpack": "^1.13.2",
     "webpack-dev-server": "^1.14.1"
   },
   "dependencies": {}
