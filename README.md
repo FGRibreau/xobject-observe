@@ -66,3 +66,10 @@ xobject-observe leverage instead the [ES6 Proxy object API](https://developer.mo
 - [ ] IE9 support
 - [ ] IE8 support
 - [ ] \(bonus\) Opera support
+
+
+# Development
+
+- `npm run update`: update dependencies
+- `npm run changelog`: update changelog
+- `npm run test-browser`: test browser
