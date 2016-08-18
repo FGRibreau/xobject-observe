@@ -9,5 +9,4 @@ test:
     - npm run dist
     - npm run dist-test
     - npm run test
-    - npm run test-browser
-    - npm run test-coverage-coveralls
+    - npm run send-coverage
