@@ -2,7 +2,7 @@
 
 [![Build Status](https://img.shields.io/circleci/project/FGRibreau/xobject-observe.svg)](https://circleci.com/gh/FGRibreau/xobject-observe/) [![Coverage Status](https://img.shields.io/coveralls/FGRibreau/xobject-observe/master.svg)](https://coveralls.io/github/FGRibreau/xobject-observe?branch=master) [![Deps](	https://img.shields.io/david/FGRibreau/xobject-observe.svg)](https://david-dm.org/FGRibreau/xobject-observe) [![NPM version](https://img.shields.io/npm/v/xobject-observe.svg)](http://badge.fury.io/js/xobject-observe) [![Downloads](http://img.shields.io/npm/dm/xobject-observe.svg)](https://www.npmjs.com/package/xobject-observe) 
 
-[![available-for-advisory](https://img.shields.io/badge/available%20for%20consulting%20advisory-yes-ff69b4.svg?)](http://bit.ly/2c7uFJq) ![extra](https://img.shields.io/badge/actively%20maintained-yes-ff69b4.svg) [![Twitter Follow](https://img.shields.io/twitter/follow/fgribreau.svg?style=flat)](https://twitter.com/FGRibreau)
+[![Get help on Codementor](https://cdn.codementor.io/badges/get_help_github.svg)](https://www.codementor.io/fgribreau?utm_source=github&utm_medium=button&utm_term=fgribreau&utm_campaign=github) [![available-for-advisory](https://img.shields.io/badge/available%20for%20consulting%20advisory-yes-ff69b4.svg?)](http://bit.ly/2c7uFJq) ![extra](https://img.shields.io/badge/actively%20maintained-yes-ff69b4.svg) [![Twitter Follow](https://img.shields.io/twitter/follow/fgribreau.svg?style=flat)](https://twitter.com/FGRibreau)
 
 
 [![Selenium Browser Matrix](https://saucelabs.com/browser-matrix/xobject-observe.svg)](https://saucelabs.com/u/xobject-observe)
