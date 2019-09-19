@@ -61,7 +61,7 @@
     "mochify": "^2.18.1",
     "nyc": "^8.1.0",
     "updtr": "^0.2.1",
-    "webpack": "^1.13.1",
+    "webpack": "^2.7.0",
     "webpack-dev-server": "^1.14.1"
   },
   "dependencies": {}
