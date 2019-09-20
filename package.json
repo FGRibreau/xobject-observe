@@ -55,7 +55,7 @@
     "babelify": "^7.3.0",
     "chai": "^3.5.0",
     "conventional-changelog": "^1.1.0",
-    "conventional-changelog-cli": "^1.2.0",
+    "conventional-changelog-cli": "^2.0.23",
     "coveralls": "^2.11.12",
     "mocha": "^3.0.1",
     "mochify": "^2.18.1",
